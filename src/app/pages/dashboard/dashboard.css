@@ -1,0 +1,23 @@
+.card{
+    transition: .3s;
+    border-radius:15px;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 20px 40px rgba(0,0,0,.15)!important;
+}
+
+.card img{
+    border-radius:15px 15px 0 0;
+    height:220px;
+    object-fit:cover;
+}
+
+.btn{
+    border-radius:30px;
+}
+
+section{
+    overflow:hidden;
+}
