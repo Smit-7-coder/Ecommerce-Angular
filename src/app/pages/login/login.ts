@@ -28,9 +28,9 @@ export class Login {
         console.log("Complete Result:", result);
 
         if (result.success == true) {
-            localStorage.setItem('token', result.data.token);
-            localStorage.setItem('userId',result.data.userId);
-            localStorage.setItem('userName',result.data.userName);
+          localStorage.setItem('token', result.data.token);
+          localStorage.setItem('userId', result.data.userId);
+          localStorage.setItem('userName', result.data.userName);
           // console.log("Login Success");  
           this.router.navigate(['/dashboard']);
         } else {
@@ -46,5 +46,9 @@ export class Login {
         // debugger;
       }
     })
+  }
+
+  goToRegister(){
+    this.router.navigate(['/registration']);
   }
 }

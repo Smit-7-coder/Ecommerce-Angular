@@ -1,0 +1,11 @@
+<form action="" [formGroup]="registrationFrom">
+
+    <input type="text" formControlName="userName" placeholder="Username" formControlName="username">
+
+    <input type="password" formControlName="password" placeholder="Password" formControlName="password">
+
+    <input type="password" formControlName="confirmPassword" placeholder="Confirm Password"
+        formControlName="confirmpassword">
+
+    <button type="submit" (click)="onRegister()">Register</button>
+</form>

@@ -4,6 +4,7 @@ import { Layout } from './pages/layout/layout';
 import { Dashboard } from './pages/dashboard/dashboard';
 import { Product } from './pages/product/product';
 import { ChangePassword } from './pages/change-password/change-password';
+import { Registration } from './pages/registration/registration';
 
 export const routes: Routes = [
 
@@ -16,6 +17,11 @@ export const routes: Routes = [
   {
     path: 'login',
     component: Login
+  },
+
+  {
+    path: "registration",
+    component: Registration
   },
 
   {
