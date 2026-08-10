@@ -19,7 +19,7 @@ export class Login {
   http = inject(HttpClient);
   router = inject(Router);
 
-  onLogin() {
+  onLogin() { 
     // debugger;
     const formValue = this.loginForm.value;
     this.http.post("http://localhost:5282/api/User/GetUserDetails", formValue).subscribe({
