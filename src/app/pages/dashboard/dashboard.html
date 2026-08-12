@@ -1,157 +1,39 @@
-<!-- ================= FEATURED PRODUCTS ================= -->
+<div class="row g-4">
 
-<section class="container py-5">
+    @for (product of products(); track product.productId) {
 
-    <div class="d-flex justify-content-between align-items-center mb-4">
-
-        <h2 class="fw-bold">Featured Products</h2>
-
-        <a routerLink="/product" class="btn btn-outline-primary">
-            View All
-        </a>
-
-    </div>
-
-    <div class="row g-4">
-
-        <!-- Product 1 -->
         <div class="col-lg-3 col-md-6">
+
             <div class="card border-0 shadow-sm h-100">
 
                 <img
-                    src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=500"
+                    [src]="product.imageUrl"
                     class="card-img-top"
-                    alt="iPhone 16 Pro">
+                    [alt]="product.productName">
 
                 <div class="card-body">
 
-                    <h5>iPhone 16 Pro</h5>
+                    <h5>
+                        {{ product.productName }}
+                    </h5>
 
                     <p class="text-muted">
-                        Apple Smartphone
+                        {{ product.brandName }} {{ product.categoryName }}
                     </p>
 
                     <h4 class="text-primary">
-                        ₹99,999
+                        ₹{{ product.price | number }}
                     </h4>
 
-                    <button class="btn btn-outline-primary w-100 mb-2"
-                            routerLink="/product">
+                    <button
+                        class="btn btn-outline-primary w-100 mb-2"
+                        routerLink="/product">
                         View Details
                     </button>
 
-                    <button class="btn btn-dark w-100"
-                            routerLink="/cart">
-                        Add To Cart
-                    </button>
-
-                </div>
-
-            </div>
-        </div>
-
-        <!-- Product 2 -->
-        <div class="col-lg-3 col-md-6">
-            <div class="card border-0 shadow-sm h-100">
-
-                <img
-                    src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=500"
-                    class="card-img-top"
-                    alt="MacBook Air">
-
-                <div class="card-body">
-
-                    <h5>MacBook Air</h5>
-
-                    <p class="text-muted">
-                        Apple Laptop
-                    </p>
-
-                    <h4 class="text-primary">
-                        ₹1,19,999
-                    </h4>
-
-                    <button class="btn btn-outline-primary w-100 mb-2"
-                            routerLink="/product">
-                        View Details
-                    </button>
-
-                    <button class="btn btn-dark w-100"
-                            routerLink="/cart">
-                        Add To Cart
-                    </button>
-
-                </div>
-
-            </div>
-        </div>
-
-        <!-- Product 3 -->
-        <div class="col-lg-3 col-md-6">
-            <div class="card border-0 shadow-sm h-100">
-
-                <img
-                    src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500"
-                    class="card-img-top"
-                    alt="AirPods Max">
-
-                <div class="card-body">
-
-                    <h5>AirPods Max</h5>
-
-                    <p class="text-muted">
-                        Wireless Headphones
-                    </p>
-
-                    <h4 class="text-primary">
-                        ₹49,999
-                    </h4>
-
-                    <button class="btn btn-outline-primary w-100 mb-2"
-                            routerLink="/product">
-                        View Details
-                    </button>
-
-                    <button class="btn btn-dark w-100"
-                            routerLink="/cart">
-                        Add To Cart
-                    </button>
-
-                </div>
-
-            </div>
-        </div>
-
-        
-
-        <!-- Product 4 -->
-        <div class="col-lg-3 col-md-6">
-            <div class="card border-0 shadow-sm h-100">
-
-                <img
-                    src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=500"
-                    class="card-img-top"
-                    alt="Smart Watch">
-
-                <div class="card-body">
-
-                    <h5>Smart Watch</h5>
-
-                    <p class="text-muted">
-                        Fitness Tracker
-                    </p>
-
-                    <h4 class="text-primary">
-                        ₹19,999
-                    </h4>
-
-                    <button class="btn btn-outline-primary w-100 mb-2"
-                            routerLink="/product">
-                        View Details
-                    </button>
-
-                    <button class="btn btn-dark w-100"
-                            routerLink="/cart">
+                    <button
+                        class="btn btn-dark w-100"
+                        routerLink="/cart">
                         Add To Cart
                     </button>
 
@@ -159,10 +41,8 @@
 
             </div>
 
-            
         </div>
 
-    </div>
+    }
 
-</section>
-
+</div>
