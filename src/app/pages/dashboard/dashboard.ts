@@ -1,8 +1,9 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { DecimalPipe } from '@angular/common';
-import { ProductService } from '../../services/products.services';
 
+import { ProductService } from '../../services/products.services';
+import { CartService } from '../../services/cart.services';
 @Component({
   selector: 'app-dashboard',
   standalone: true,
@@ -13,6 +14,7 @@ import { ProductService } from '../../services/products.services';
 export class Dashboard implements OnInit {
 
   private productServices = inject(ProductService);
+  private cartService = inject(CartService);
 
   products = signal<any[]>([]);
 
@@ -20,18 +22,39 @@ export class Dashboard implements OnInit {
 
     this.productServices.getProducts().subscribe((response: any) => {
 
-      console.log('API RESPONSE:', response);
-
       if (response.success) {
 
         this.products.set(response.data);
-
-        console.log('PRODUCTS ARRAY:', this.products());
-        console.log('TOTAL PRODUCTS:', this.products().length);
 
       }
 
     });
 
   }
-}
+
+  addToCart(productId: number, quantity: number): void {
+
+    const userId = Number(localStorage.getItem('userId'));
+
+    this.cartService
+      .addToCart(userId, productId, quantity)
+      .subscribe((response: any) => {
+
+        console.log('Product added to cart:', response);
+
+        if (response.success) {
+
+          alert('Product added to cart successfully!');
+
+        }
+        else {
+
+          alert(response.message);
+
+        }
+
+      });
+
+  }
+
+} 

@@ -15,4 +15,5 @@ export class ProductService {
             `${this.apiUrl}/GetProducts`
         );
     }
+
 }
