@@ -1,11 +1,11 @@
 import { Component, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { ɵInternalFormsSharedModule, ReactiveFormsModule, FormGroup, FormControl } from "@angular/forms";
+import {ReactiveFormsModule, FormGroup, FormControl } from "@angular/forms";
 
 @Component({
   selector: 'app-registration',
-  imports: [ɵInternalFormsSharedModule, ReactiveFormsModule],
+  imports: [ReactiveFormsModule],
   templateUrl: './registration.html',
   styleUrl: './registration.css',
 })
