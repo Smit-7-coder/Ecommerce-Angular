@@ -5,6 +5,7 @@ import { Dashboard } from './pages/dashboard/dashboard';
 import { Product } from './pages/product/product';
 import { ChangePassword } from './pages/change-password/change-password';
 import { Registration } from './pages/registration/registration';
+import { Cart } from './pages/cart/cart';
 
 export const routes: Routes = [
 
@@ -40,6 +41,10 @@ export const routes: Routes = [
       {
         path: 'change-password',
         component: ChangePassword
+      },
+      {
+        path: 'cart',
+        component: Cart
       }
 
     ]
